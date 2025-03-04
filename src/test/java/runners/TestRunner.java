@@ -1,15 +1,20 @@
 package runners;
 
-import org.junit.runner.RunWith;
-import io.cucumber.junit.Cucumber;
-import io.cucumber.junit.CucumberOptions;
+import io.cucumber.testng.AbstractTestNGCucumberTests;
+import io.cucumber.testng.CucumberOptions;
+import org.testng.annotations.DataProvider;
 
-@RunWith(Cucumber.class)
 @CucumberOptions(
         features = "src/test/java/features",
         glue = "stepDefinitions",
         plugin = {"pretty", "html:target/cucumber-reports.html"},
         monochrome = true
 )
-public class TestRunner {
+public class TestRunner extends AbstractTestNGCucumberTests {
+
+    @Override
+    @DataProvider(parallel = false) // Set true for parallel execution
+    public Object[][] scenarios() {
+        return super.scenarios();
+    }
 }

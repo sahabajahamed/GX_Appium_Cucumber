@@ -69,7 +69,7 @@ public class Sign_in_POM {
     public void tapAllowButton3(){allowButton3.click();}
 
     public void verifyHomePage() {
-        boolean isDisplayed = driver.findElement(AppiumBy.id("com.android.permissioncontroller:id/permission_allow_button")).isDisplayed();
+        boolean isDisplayed = driver.findElement(AppiumBy.androidUIAutomator("new UiSelector().className(\"android.widget.ImageView\").instance(2)")).isDisplayed();
         if (!isDisplayed) {
             throw new AssertionError("Home page not displayed.");
         }
