@@ -20,11 +20,18 @@ public class SignInSteps {
     public void user_enters_credentials(String username, String password) {
         SignIn.enterUsername(username);
         SignIn.enterPassword(password);
+        SignIn.tapViewPassword();
         SignIn.tapSubmitButton();
     }
 
     @Then("User should see the homepage")
     public void user_should_see_the_homepage() {
+        SignIn.verifyHomePage();
+        driver.quit();
+    }
+
+    @Then("User should not see the homepage")
+    public void user_should_not_see_the_homepage() {
         SignIn.verifyHomePage();
         driver.quit();
     }

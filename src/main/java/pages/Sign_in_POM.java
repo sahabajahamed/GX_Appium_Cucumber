@@ -74,5 +74,4 @@ public class Sign_in_POM {
             throw new AssertionError("Home page not displayed.");
         }
     }
-
 }
