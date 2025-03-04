@@ -9,7 +9,8 @@ public class SignInSteps {
     WebDriver driver;
     Sign_in_POM SignIn;
 
-    public void launch() {
+    @Given("User launches the app on {string}")
+    public void user_launches_the_app() {
         DriverManager.initializeDriver();
         driver = DriverManager.getDriver();
         SignIn = new Sign_in_POM();
