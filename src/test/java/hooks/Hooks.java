@@ -8,7 +8,7 @@ public class Hooks {
 
     @Before
     public void setUp() {
-        DriverManager.initializeDriver();
+        DriverManager.initializeDriver("Android");
     }
 
     @After

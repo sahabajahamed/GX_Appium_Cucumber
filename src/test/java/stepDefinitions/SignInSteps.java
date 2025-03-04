@@ -10,9 +10,9 @@ public class SignInSteps {
     Sign_in_POM SignIn;
 
     @Given("User launches the app on {string}")
-    public void user_launches_the_app() {
-        DriverManager.initializeDriver();
-        driver = DriverManager.getDriver();
+    public void user_launches_the_app(String platform) {
+        DriverManager.initializeDriver(platform);
+        this.driver = DriverManager.getDriver();
         SignIn = new Sign_in_POM();
     }
 

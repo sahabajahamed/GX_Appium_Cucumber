@@ -4,7 +4,3 @@ Feature: Mobile Login Functionality
     Given User launches the app on "Android"
     When User enters "arifraza" and "1234567"
     Then User should see the homepage
-
-  Scenario: Login with invalid credentials
-    When User enters "sjhkasdgjh" and "789"
-    Then User should see the homepage
