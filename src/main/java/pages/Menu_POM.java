@@ -4,6 +4,7 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import utils.DriverManager;
+import utils.Driver_for_POM;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
@@ -12,14 +13,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class Menu_POM {
-    private AppiumDriver driver;
-    private WebDriverWait wait;
+public class Menu_POM extends Driver_for_POM {
 
     public Menu_POM() {
-        this.driver = utils.DriverManager.getDriver();
-        PageFactory.initElements(new AppiumFieldDecorator(driver), this);
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+     super();
     }
 
     @AndroidFindBy(uiAutomator = "new UiSelector().className(\"android.widget.ImageView\").instance(2)")

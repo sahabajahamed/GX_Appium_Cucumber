@@ -1,32 +1,24 @@
 package pages;
 
 import io.appium.java_client.AppiumBy;
-import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
-import io.appium.java_client.pagefactory.AppiumFieldDecorator;
-import utils.DriverManager;
+import utils.Driver_for_POM;
 import utils.Excel_reader;
 import utils.Mileage;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import java.time.Duration;
 
 
-public class Dispatch_form_POM {
 
-    private AppiumDriver driver;
-    private WebDriverWait wait;
+public class Dispatch_form_POM extends Driver_for_POM {
+
     private String loc = Excel_reader.getLocation("");
 
     Mileage m = new Mileage();
     String numberAsString = String.valueOf(Mileage.number);
 
     public Dispatch_form_POM() {
-        this.driver = DriverManager.getDriver();
-        PageFactory.initElements(new AppiumFieldDecorator(driver), this);
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+       super();
     }
 
     @AndroidFindBy(uiAutomator = "new UiSelector().className(\"android.view.View\").instance(15)")

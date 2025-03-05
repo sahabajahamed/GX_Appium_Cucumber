@@ -4,6 +4,8 @@ import io.appium.java_client.AppiumBy;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
+import utils.Driver_for_POM;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -11,14 +13,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class Clock_in_POM {
-    private AppiumDriver driver;
-    private WebDriverWait wait;
+public class Clock_in_POM extends Driver_for_POM {
 
     public Clock_in_POM() {
-        this.driver = utils.DriverManager.getDriver();
-        PageFactory.initElements(new AppiumFieldDecorator(driver), this);
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        super();
     }
 
     @AndroidFindBy(accessibility = "Clock In")

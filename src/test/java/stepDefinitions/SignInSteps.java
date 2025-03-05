@@ -35,4 +35,10 @@ public class SignInSteps {
         SignIn.verifyHomePage();
         driver.quit();
     }
+
+//    @Then("The UI should match the design with no visual differences")
+//    public void validateVisualDifferences() {
+//        ImageComparison.compareAndHighlightDifferences("screenshots/reference.png", "screenshots/test.png", "screenshots/differences.png");
+//    }
+
 }

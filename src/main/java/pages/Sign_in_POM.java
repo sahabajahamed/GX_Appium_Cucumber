@@ -5,6 +5,8 @@ import utils.DriverManager;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
+import utils.Driver_for_POM;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -12,15 +14,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class Sign_in_POM {
+public class Sign_in_POM extends Driver_for_POM {
 
-    private AppiumDriver driver;
-    private WebDriverWait wait;
 
     public Sign_in_POM() {
-        this.driver = DriverManager.getDriver();
-        PageFactory.initElements(new AppiumFieldDecorator(driver), this);
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+       super();
     }
 
     @AndroidFindBy(uiAutomator = "new UiSelector().className(\"android.widget.EditText\").instance(0)")
