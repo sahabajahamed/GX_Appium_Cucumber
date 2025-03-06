@@ -27,7 +27,7 @@ public class SignInSteps {
     @Then("User should see the homepage")
     public void user_should_see_the_homepage() {
         SignIn.verifyHomePage();
-        driver.quit();
+
     }
 
     @Then("User should not see the homepage")
