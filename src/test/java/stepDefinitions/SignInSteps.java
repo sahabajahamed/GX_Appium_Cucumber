@@ -33,7 +33,7 @@ public class SignInSteps {
     @Then("User should not see the homepage")
     public void user_should_not_see_the_homepage() {
         SignIn.verifyHomePage();
-        driver.quit();
+//        driver.quit();
     }
 
 //    @Then("The UI should match the design with no visual differences")
